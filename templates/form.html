@@ -1,0 +1,42 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel ="stylesheet" href="{{ url_for('static', filename='css/neon.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/sender.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+</head>
+<body>
+<center>
+    <form>
+        <table>
+        <tr>
+            <td>MAC:</td>
+            <td><input type="text" id="mac_input"><br /></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" id="passwd_input"><br /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <center>
+                    <a class="neon" id="the_button" style="margin-top: 20px;">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Run PC!
+                    </a>
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="response_div" style="margin-top: 20px; text-align: center;">{{response_msg}}</div>
+            </td>
+        </tr>
+        </table>
+    </form>
+</center>
+</body>
+</html>
