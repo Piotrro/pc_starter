@@ -5,9 +5,10 @@ $(document).on('click', '#the_button', function(e) {
     var passwd = document.getElementById("passwd_input").value;
     document.getElementById("passwd_input").value = "";
     var encrypted = CryptoJS.AES.encrypt(mac, passwd);
+    var ip = location.host;
     $.ajax({
         type: 'POST',
-        url:  "http://localhost:5000/run_pc",
+        url:  "http://" + ip + "/run_pc",
         data: JSON.stringify({"MAC": encrypted.toString()}),
         contentType: "application/json",
         success:function(response){

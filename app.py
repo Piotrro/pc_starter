@@ -26,10 +26,11 @@ def run_pc() -> str:
     if not key:
         print("No secret key in environ!!")
         return Response(status=405)
-    mac = decrypt(encrypted_mac, key).decode()
+    mac_or_name = decrypt(encrypted_mac, key).decode()
+    mac = os.environ.get(mac_or_name.upper(), mac_or_name)
     if mac:
-        print(mac)
-        # wake_pc(mac)
+        # print(mac)
+        wake_pc(mac)
     return Response(status=200)
 
 
